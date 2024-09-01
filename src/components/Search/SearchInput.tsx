@@ -17,33 +17,35 @@ const SearchInput = () => {
 		);
 	};
 
+	const handleClose = () => {
+		setIsInputVisible(false);
+		setActiveSearch([]);
+	};
+
 	return (
-		<form className="relative md:pl-14 lg:pl-0 md:w-[343px]">
+		<div className="relative md:w-[343px] pl-14 lg:pl-0">
 			{/* For screens below md, show search icon only */}
-			<div className="relative pl-8 md:hidden">
+			<div className="relative md:hidden">
 				<button className="p-4" onClick={() => setIsInputVisible(true)}>
 					<Image src="/search.svg" alt="Search" width={24} height={24} />
 				</button>
 			</div>
 
 			{/* For screens md and above, show input box and search icon */}
-			<div
-				className={`relative ${isInputVisible ? "block" : "hidden"} md:block`}
-			>
-				<input
-					type="search"
-					placeholder="Search"
-					className="w-full md:px-4 md:py-2 lg:p-4 rounded-[4px] border border-[#E0E0E0] bg-[#FAFAFA]"
-					onChange={(e) => handleSearch(e)}
-				/>
-				<button className="absolute right-1 top-1/2 -translate-y-1/2 p-4">
-					<Image src="/search.svg" alt="Search" width={24} height={24} />
-				</button>
-			</div>
-
-			{/* Mobile search box */}
-			{isInputVisible && (
-				<div className="absolute top-20 p-4 bg-slate-800 text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
+			{!isInputVisible ? (
+				<div className="relative hidden md:block">
+					<input
+						type="search"
+						placeholder="Search"
+						className="w-full md:px-4 md:py-2 lg:p-4 rounded-[4px] border border-[#E0E0E0] bg-[#FAFAFA]"
+						onChange={(e) => handleSearch(e)}
+					/>
+					<button className="absolute right-1 top-1/2 -translate-y-1/2 p-4">
+						<Image src="/search.svg" alt="Search" width={24} height={24} />
+					</button>
+				</div>
+			) : (
+				<div className="absolute top-16 left-1/2 -translate-x-1/2 w-full md:w-[343px] p-4 text-white rounded-xl flex flex-col gap-2">
 					<input
 						type="search"
 						placeholder="Search"
@@ -51,7 +53,7 @@ const SearchInput = () => {
 						onChange={(e) => handleSearch(e)}
 					/>
 					{activeSearch.length > 0 && (
-						<div className="bg-slate-800 text-white w-full rounded-xl mt-2">
+						<div className="text-white w-full rounded-xl mt-2">
 							{activeSearch.map((s, index) => (
 								<span key={index} className="block py-1">
 									{s}
@@ -59,15 +61,18 @@ const SearchInput = () => {
 							))}
 						</div>
 					)}
-					<button
-						className="absolute top-2 right-2"
-						onClick={() => setIsInputVisible(false)}
-					>
-						<Image src="/close.svg" alt="Close" width={24} height={24} />
-					</button>
+					{/* Close button only visible on small screens */}
+					{isInputVisible && (
+						<button
+							className="absolute top-6 right-6 lg:hidden"
+							onClick={handleClose}
+						>
+							<Image src="/close.svg" alt="Close" width={24} height={24} />
+						</button>
+					)}
 				</div>
 			)}
-		</form>
+		</div>
 	);
 };
 

@@ -24,12 +24,9 @@ export default function Sidebar() {
 
 		return (
 			<div
-				className={`flex items-center gap-6 pl-[30px] py-4 text-base cursor-pointer transition-colors duration-200 ease-in-out
-          ${
-						isSelected
-							? "text-[#FF5151]"
-							: "text-[#686868] hover:text-[#FF5151]"
-					}`}
+				className={`flex items-center gap-6 pl-[30px] py-4 text-base cursor-pointer transition-colors duration-200 ease-in-out ${
+					isSelected ? "text-[#FF5151]" : "text-[#686868] hover:text-[#FF5151]"
+				}`}
 				onClick={() => setSelectedItem(item.id + (isOther ? "other" : "main"))}
 			>
 				<div className="relative w-5 h-5">
@@ -47,13 +44,13 @@ export default function Sidebar() {
 
 	return (
 		<>
-			{/* Hamburger for medium and small screens */}
+			{/* Hamburger Icon */}
 			<div className="fixed top-7 left-5 md:left-24 z-50 lg:hidden">
 				<Image
-					src="/hamburger.svg"
+					src={isSidebarOpen ? "/close.svg" : "/hamburger.svg"}
 					width={32}
 					height={32}
-					alt="burger"
+					alt="Menu"
 					onClick={() => setIsSidebarOpen(!isSidebarOpen)}
 				/>
 			</div>
@@ -61,16 +58,17 @@ export default function Sidebar() {
 			{/* Sidebar Overlay for small screens */}
 			{isSidebarOpen && (
 				<div
-					className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden"
+					className="fixed inset-0 z-40 bg-black bg-opacity-80 md:hidden"
 					onClick={() => setIsSidebarOpen(false)}
 				></div>
 			)}
 
 			{/* Main Sidebar */}
 			<div
-				className={`fixed h-screen bg-[#FAFAFA] border-r-2 border-[#F1F1F1] transition-transform duration-300 ease-in-out
-          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
-          md:translate-x-0 md:w-[5.625rem] lg:w-[15.125rem]`}
+				className={`fixed h-screen bg-[#FAFAFA] border-r-2 border-[#F1F1F1] transition-transform duration-300 ease-in-out ${
+					isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+				} md:translate-x-0 md:w-[5.625rem] lg:w-[15.125rem] z-50`}
+				onClick={(e) => e.stopPropagation()}
 			>
 				{/* Sidebar content */}
 				<div className="flex flex-col justify-start items-center gap-[39px] pt-5">
