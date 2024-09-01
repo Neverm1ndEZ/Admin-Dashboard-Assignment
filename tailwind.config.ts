@@ -56,6 +56,11 @@ const config: Config = {
 					"5": "hsl(var(--chart-5))",
 				},
 			},
+			screens: {
+				sm: "640px", // default value
+				md: "768px", // default value
+				lg: "1465px", // updated to 1350px
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

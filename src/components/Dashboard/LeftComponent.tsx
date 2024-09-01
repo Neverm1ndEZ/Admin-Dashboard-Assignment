@@ -66,7 +66,8 @@ export default function LeftComponent() {
 
 	return (
 		<div className="space-y-5">
-			<div className="flex items-center justify-center gap-3.5 ">
+			{/* Stack for mobile, align in row for larger screens */}
+			<div className="flex flex-col md:flex-row items-center md:justify-center gap-3.5">
 				{topCardData.map((card) => (
 					<TopCard
 						key={card.id}
@@ -78,7 +79,8 @@ export default function LeftComponent() {
 					/>
 				))}
 			</div>
-			<div className="flex items-center justify-center gap-4">
+			{/* Stack chart cards for mobile */}
+			<div className="flex flex-col md:flex-row items-center justify-center gap-4">
 				{chartCardData.map((card) => (
 					<ChartCard
 						key={card.id}
@@ -91,6 +93,7 @@ export default function LeftComponent() {
 					/>
 				))}
 			</div>
+			{/* Announcement section remains stacked */}
 			<Announcement
 				title="Company Announcements"
 				date="14 Sep 2021"

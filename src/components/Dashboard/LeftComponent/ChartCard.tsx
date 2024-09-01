@@ -17,7 +17,7 @@ export default function ChartCard({
 	chartData: string;
 }) {
 	return (
-		<div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full max-w-md md:max-w-lg p-4 md:p-5 bg-[#FFF] border border-[#E0E0E0] rounded-[10px]">
+		<div className="flex flex-row items-start md:items-center justify-between w-full p-4 md:p-5 bg-[#FFF] border border-[#E0E0E0] rounded-[10px]">
 			<div className="flex-shrink-0 mb-4 md:mb-0 md:mr-4">
 				<h1 className="text-[#161E54] text-base md:text-lg font-medium mb-2 md:mb-4 whitespace-nowrap">
 					{heading}

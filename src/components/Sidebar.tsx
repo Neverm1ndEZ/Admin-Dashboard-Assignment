@@ -24,7 +24,7 @@ export default function Sidebar() {
 
 		return (
 			<div
-				className={`flex items-center gap-6 pl-[30px] py-4 text-base cursor-pointer transition-colors duration-200 ease-in-out ${
+				className={`flex items-center justify-center lg:justify-normal gap-6 lg:pl-[30px] py-4 text-base cursor-pointer transition-colors duration-200 ease-in-out ${
 					isSelected ? "text-[#FF5151]" : "text-[#686868] hover:text-[#FF5151]"
 				}`}
 				onClick={() => setSelectedItem(item.id + (isOther ? "other" : "main"))}
@@ -65,7 +65,7 @@ export default function Sidebar() {
 
 			{/* Main Sidebar */}
 			<div
-				className={`fixed h-screen bg-[#FAFAFA] border-r-2 border-[#F1F1F1] transition-transform duration-300 ease-in-out ${
+				className={`p-4 md:p-0 fixed h-screen bg-[#FAFAFA] border-r-2 border-[#F1F1F1] transition-transform duration-300 ease-in-out ${
 					isSidebarOpen ? "translate-x-0" : "-translate-x-full"
 				} md:translate-x-0 md:w-[5.625rem] lg:w-[15.125rem] z-50`}
 				onClick={(e) => e.stopPropagation()}

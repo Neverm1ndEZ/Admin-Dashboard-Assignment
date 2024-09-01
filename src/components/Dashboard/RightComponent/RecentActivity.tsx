@@ -6,10 +6,10 @@ export default function RecentActivity() {
 			<div className="bg-[#1B204A] pl-6 py-2.5 pr-2.5 rounded-t-lg">
 				<h1 className="text-lg font-medium">Recent Activity</h1>
 			</div>
-			<div className="my-6 ml-6 space-y-1 w-full">
+			<div className="my-6 ml-6 space-y-1">
 				<p className="text-[10px]">10.40 AM, Fri 10 Sept 2021</p>
 				<p className="text-lg font-medium">You Posted a New Job</p>
-				<p className="text-sm lg:max-w-[63%] md:max-w-[80%] break-words">
+				<p className="text-sm break-words lg:max-w-[63%]">
 					Kindly check the requirements and terms of work and make sure
 					everything is right.
 				</p>
