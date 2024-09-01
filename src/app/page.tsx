@@ -7,7 +7,7 @@ export default function Home() {
 			<h1 className="text-[#161E54] text-2xl font-medium mt-5 mb-3">
 				Dashboard
 			</h1>
-			<div className="flex min-h-screen items-start justify-between">
+			<div className="flex min-h-screen items-start justify-center ">
 				<LeftComponent />
 				<RightComponent />
 			</div>

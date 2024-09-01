@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 
-const AnnouncementItem = ({
+export const AnnouncementItem = ({
 	title,
 	timestamp,
 }: {
@@ -68,7 +68,7 @@ export default function Announcement({
 				))}
 			</div>
 
-			<div className="bg-[#fff] border-t border-[#E0E0E0] p-2.5">
+			<div className="bg-[#fff] border-t border-[#E0E0E0] p-2.5 rounded-b-xl">
 				<button
 					className="text-sm text-[#FF5151] font-medium w-full text-center"
 					onClick={onSeeAll}
