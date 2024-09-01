@@ -15,7 +15,7 @@ export default function TopCard({
 }) {
 	return (
 		<div
-			className={`max-w-[350px] w-[204px] pl-5 py-3 pr-3 grid place-items-start gap-4 rounded-lg`}
+			className={`w-full max-w-[90%] md:max-w-[350px] pl-5 py-3 pr-3 grid place-items-start gap-4 rounded-lg`}
 			style={{ backgroundColor: rootBg }}
 		>
 			<h1 className="text-[#161E54] font-medium text-lg">{title}</h1>

@@ -9,7 +9,7 @@ export default function UpcomingSchedule() {
 			timestamp: "Today, 10:30 AM",
 		},
 		{
-			title: "Short meeting with product designer from IT Departement",
+			title: "Short meeting with product designer from IT Department",
 			timestamp: "Today - 09.15 AM",
 		},
 		{
@@ -19,14 +19,14 @@ export default function UpcomingSchedule() {
 	];
 
 	return (
-		<div className="bg-[#FFFFFF] w-[567px]  rounded-xl border border-[#E0E0E0] flex flex-col">
-			<div className="p-5 space-y-4 flex-grow overflow-hidden">
+		<div className="bg-[#FFFFFF] w-full max-w-[95%] md:max-w-[567px] rounded-xl border border-[#E0E0E0] flex flex-col mx-auto">
+			<div className="p-5 space-y-3 flex-grow overflow-hidden">
 				<div className="flex items-center justify-between">
-					<h1 className="text-[#161E54] text-lg font-medium whitespace-nowrap">
+					<h1 className="text-[#161E54] text-base md:text-lg font-medium whitespace-nowrap">
 						Upcoming Schedule
 					</h1>
-					<div className="w-[145px] px-1.5 border border-[#EFEFEF] rounded-sm flex items-center justify-between">
-						<p className="text-[#686868] text-xs p-0.5 whitespace-nowrap overflow-hidden text-ellipsis">
+					<div className="w-[60%] max-w-[145px] px-1.5 border border-[#EFEFEF] rounded-sm flex items-center justify-between">
+						<p className="text-[#686868] text-xs whitespace-nowrap overflow-hidden text-ellipsis">
 							Today, 13 Sep 2021
 						</p>
 						<Image
@@ -48,7 +48,7 @@ export default function UpcomingSchedule() {
 				<div>
 					<p className="text-[#686868] text-xs">Other</p>
 				</div>
-				<div className="overflow-y-auto max-h-[180px] pr-2 space-y-2">
+				<div className="overflow-y-auto max-h-52 pr-2 space-y-2">
 					{announcements.map((announcement, index) => (
 						<AnnouncementItem
 							key={index}
@@ -58,8 +58,8 @@ export default function UpcomingSchedule() {
 					))}
 				</div>
 			</div>
-			<div className="bg-[#fff] border-t border-[#E0E0E0] p-2.5 rounded-b-xl">
-				<button className="text-sm text-[#FF5151] font-medium w-full text-center">
+			<div className="bg-[#fff] border-t border-[#E0E0E0] p-2.5 flex justify-center items-center rounded-b-xl">
+				<button className="text-sm text-[#FF5151] font-medium w-[48%] text-center">
 					Create a New Schedule
 				</button>
 			</div>
