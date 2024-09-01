@@ -1,7 +1,16 @@
+import LeftComponent from "@/components/Dashboard/LeftComponent";
+import RightComponent from "@/components/Dashboard/RightComponent";
+
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<h1>Random</h1>
+		<main className="">
+			<h1 className="text-[#161E54] text-2xl font-medium mt-5 mb-3">
+				Dashboard
+			</h1>
+			<div className="flex min-h-screen items-start justify-between">
+				<LeftComponent />
+				<RightComponent />
+			</div>
 		</main>
 	);
 }
