@@ -19,7 +19,7 @@ export default function UpcomingSchedule() {
 	];
 
 	return (
-		<div className="bg-[#FFFFFF] w-full max-w-[95%] md:max-w-[567px] rounded-xl border border-[#E0E0E0] flex flex-col mx-auto">
+		<div className="bg-[#FFFFFF] w-full rounded-xl border border-[#E0E0E0] flex flex-col mx-auto">
 			<div className="p-5 space-y-3 flex-grow overflow-hidden">
 				<div className="flex items-center justify-between">
 					<h1 className="text-[#161E54] text-base md:text-lg font-medium whitespace-nowrap">
@@ -48,7 +48,7 @@ export default function UpcomingSchedule() {
 				<div>
 					<p className="text-[#686868] text-xs">Other</p>
 				</div>
-				<div className="overflow-y-auto max-h-52 pr-2 space-y-2">
+				<div className="overflow-y-auto max-h-20 lg:max-h-[12.75rem] pr-2 space-y-2">
 					{announcements.map((announcement, index) => (
 						<AnnouncementItem
 							key={index}

@@ -40,7 +40,7 @@ export default function Announcement({
 	onSeeAll = () => {},
 }) {
 	return (
-		<div className="w-full max-w-[700px] bg-[#FFFFFF] border border-[#E0E0E0] rounded-xl">
+		<div className="w-full bg-[#FFFFFF] border border-[#E0E0E0] rounded-xl">
 			<div className="p-4 md:p-5 space-y-3 md:space-y-4">
 				<div className="flex items-center justify-between">
 					<h1 className="text-[#161E54] text-base md:text-lg font-medium whitespace-nowrap">
